@@ -16,6 +16,13 @@ class RequestViewModelCubit extends Cubit<RequestViewModelState> {
   List<String> categories = ['Dogs', 'Cats'];
   String selectedCategory = 'Dogs';
 
+  List<String> goodWith =  [
+    "PET FRIENDLY",
+    "KID FRIENDLY",
+    "DISABLED"
+  ];
+  String selectedGoodWith = 'Disabled';
+
   List<String> years = [
     '1',
     '2',
@@ -89,7 +96,7 @@ class RequestViewModelCubit extends Cubit<RequestViewModelState> {
 
   late SendFilterModel sendFilterModel;
 
-  void dogData({
+  void postDogData({
     required String breed,
     required String age,
     required String size,
@@ -122,4 +129,14 @@ class RequestViewModelCubit extends Cubit<RequestViewModelState> {
       emit(RequestErrorState(error.toString()));
     });
   }
+
+
+  bool checkValue=false;
+void changeCheckBoxValue(){
+
+  checkValue=!checkValue;
+  emit(CheckBoxChangeState());
+
+}
+
 }

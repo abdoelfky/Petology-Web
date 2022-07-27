@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:petology_ap/component/button_custom/ButtonCustom.dart';
+
+import '../button_custom_component/ButtonCustom.dart';
 
 Widget BuildCard(context) {
   var width = MediaQuery.of(context).size.width;

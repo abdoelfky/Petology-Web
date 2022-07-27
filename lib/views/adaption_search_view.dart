@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:petology_ap/component/components.dart';
-import 'package:petology_ap/component/grid_view_item/grid_view_item.dart';
+
+import '../reposoteries/component/general_component/component.dart';
+import '../reposoteries/component/drop_down_component/drop_down_component.dart';
+import '../reposoteries/component/grid_view_component/grid_view_item.dart';
 
 class GetAdaptionScreen extends StatelessWidget {
   const GetAdaptionScreen({Key? key}) : super(key: key);

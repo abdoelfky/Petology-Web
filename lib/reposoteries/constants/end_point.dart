@@ -1,6 +1,11 @@
+import 'package:orange/views/services_view.dart';
+
 const LOGIN ='/auth/login';
 
 const CREATE ='/pets';
+
+const SERVICES='pets/request';
+
 const SendOTP ='users/send-otp';
 
 const VerifyEmail= 'users/verify-email';

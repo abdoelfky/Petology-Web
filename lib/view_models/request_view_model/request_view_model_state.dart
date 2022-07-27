@@ -18,3 +18,5 @@ class RequestErrorState extends RequestViewModelState{
 
   RequestErrorState(this.error);
 }
+
+class CheckBoxChangeState extends RequestViewModelState{}

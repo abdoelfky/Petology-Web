@@ -7,6 +7,7 @@ import 'package:orange/view_models/home_view_model_cubit/home_view_model.dart';
 import 'package:orange/view_models/login_view_model_cubit/login_cubit.dart';
 import 'package:orange/view_models/register_view_model_cubit/cubit.dart';
 import 'package:orange/view_models/request_view_model/request_view_model_cubit.dart';
+import 'package:orange/view_models/services_view_model/services_view_model_cubit.dart';
 import 'package:orange/views/home_view.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:desktop_window/desktop_window.dart';
@@ -19,6 +20,8 @@ void main() async{
    await CacheHelper.init();
   if(Platform.isWindows)
     await DesktopWindow.setMinWindowSize(Size(1300.0,1200.0));
+
+  
 
   runApp(MyApp());
 }
@@ -35,6 +38,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context)=>LoginCubit()),
         BlocProvider(create: (context)=>RegisterCubit()..changeScreen(index)),
         BlocProvider(create: (context)=>RequestViewModelCubit()),
+        BlocProvider(create: (context)=>ServicesViewModelCubit()),
+
 
 
       ],

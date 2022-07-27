@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
-import '../reposoteries/component/component.dart';
+import '../reposoteries/component/general_component/component.dart';
+import '../reposoteries/component/text_button_component/text_button_component.dart';
 import '../reposoteries/constants/constants.dart';
 import '../view_models/home_view_model_cubit/HomeViewModelState.dart';
 import '../view_models/home_view_model_cubit/home_view_model.dart';
