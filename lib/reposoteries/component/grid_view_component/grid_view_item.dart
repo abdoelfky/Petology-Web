@@ -24,7 +24,7 @@ Widget BuildCard(context) {
                   aspectRatio: 1,
                   child: Image(
                     image: AssetImage(
-                      "assets/image/elsa.png",
+                      "assets/images/elsa.png",
                     ),
                     width: width * 0.4,
                     height: height * 0.4,

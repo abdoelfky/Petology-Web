@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 import '../network/local/cache_helper.dart';
 
+int catId=1;
 const Color primaryColor = Color(0xff56392D);
 const Color secondaryColor = Color(0xffFFE3C5);
 const Color gradientFirstColor = Color(0xff674739);

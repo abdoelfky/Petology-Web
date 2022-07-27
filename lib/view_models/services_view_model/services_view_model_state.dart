@@ -18,3 +18,5 @@ class RequestErrorState extends ServicesViewModelState{
 
   RequestErrorState(this.error);
 }
+
+class HomeViewModelChangeScreenState extends ServicesViewModelState{}

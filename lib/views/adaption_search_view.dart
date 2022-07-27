@@ -1,63 +1,75 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
-
-import '../reposoteries/component/general_component/component.dart';
 import '../reposoteries/component/drop_down_component/drop_down_component.dart';
 import '../reposoteries/component/grid_view_component/grid_view_item.dart';
+import '../view_models/adabtion_view_model/adaption_cubit.dart';
+import '../view_models/adabtion_view_model/adaption_state.dart';
 
-class GetAdaptionScreen extends StatelessWidget {
-  const GetAdaptionScreen({Key? key}) : super(key: key);
+class AdaptionSearchView extends StatelessWidget {
+  const AdaptionSearchView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final w = MediaQuery.of(context).size.width;
     final h = MediaQuery.of(context).size.height;
-    List items = ["Dog", "Cat","Reda", "Ehab"];
-    return Scaffold(
-      body: Stack(
-        children: [
-          Positioned(
-            right: 0,
-            top: 0,
-            child: Image(
-              image: AssetImage(
-                "assets/image/leg.png",
-              ),
-              width: w * 0.4,
-              height: h * 0.4,
-              color: HexColor("#FFE3C5"),
-            ),
-          ),
-          Positioned(
-            left: 0,
-            top: 0,
-            child: RotatedBox(
-              quarterTurns: 2,
+    List<String> items = ['!', '@','&', '#'];
+    return  BlocConsumer<AdaptionCubit,AdaptionState>(
+      listener: (BuildContext context, state) {
+        if(state is FilterGridSuccessState){
+
+
+
+        }
+
+
+       var model =AdaptionCubit.get(context).filterGridModel;
+      },
+
+      builder: (BuildContext context, Object? state) {
+
+        return Stack(
+          children: [
+            Positioned(
+              right: 0,
+              top: 0,
               child: Image(
-                image: AssetImage(
-                  "assets/image/leg.png",
+                image: const AssetImage(
+                  "assets/images/leg.png",
                 ),
                 width: w * 0.4,
                 height: h * 0.4,
                 color: HexColor("#FFE3C5"),
               ),
             ),
-          ),
-          Positioned(
-            left: 0,
-            top: h * .500,
-            child: Image(
-              image: AssetImage(
-                "assets/image/leg.png",
+            Positioned(
+              left: 0,
+              top: 0,
+              child: RotatedBox(
+                quarterTurns: 2,
+                child: Image(
+                  image: const AssetImage(
+                    "assets/images/leg.png",
+                  ),
+                  width: w * 0.4,
+                  height: h * 0.4,
+                  color: HexColor("#FFE3C5"),
+                ),
               ),
-              color: HexColor("#FFE3C5"),
-              width: w * 0.4,
-              height: h * 0.4,
             ),
-          ),
-          Scaffold(
-            backgroundColor: Colors.transparent,
-            body: SingleChildScrollView(
+            Positioned(
+              left: 0,
+              top: h * .500,
+              child: Image(
+                image: AssetImage(
+                  "assets/images/leg.png",
+                ),
+                color: HexColor("#FFE3C5"),
+                width: w * 0.4,
+                height: h * 0.4,
+              ),
+            ),
+            SingleChildScrollView(
               child: Padding(
                 padding: EdgeInsets.all(20),
                 child: Container(
@@ -115,8 +127,8 @@ class GetAdaptionScreen extends StatelessWidget {
                             myDropdown(
                               height: h * 0.07,
                               width: w * 0.13,
-                              dropItems: items,
-                              selectedItem: items[0],
+                              dropItems:items,
+                              selectedItem: items[0] ,
                               hintText: "Breed",
                             ),
                             myDropdown(
@@ -186,7 +198,7 @@ class GetAdaptionScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Padding(
@@ -245,7 +257,7 @@ class GetAdaptionScreen extends StatelessWidget {
                             child: GridView.builder(
                               itemCount: 9,
                               gridDelegate:
-                                  const SliverGridDelegateWithMaxCrossAxisExtent(
+                              const SliverGridDelegateWithMaxCrossAxisExtent(
                                 childAspectRatio: .8,
                                 mainAxisSpacing: 9,
                                 crossAxisSpacing: 6.0,
@@ -279,9 +291,12 @@ class GetAdaptionScreen extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-        ],
-      ),
+
+          ],
+
+        );
+      },
     );
+
   }
 }

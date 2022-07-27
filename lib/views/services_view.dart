@@ -14,8 +14,7 @@ class ServicesView extends StatelessWidget {
 
     var locationController = TextEditingController();
     var phoneController = TextEditingController();
-    final w = MediaQuery.of(context).size.width;
-    final h = MediaQuery.of(context).size.height;
+    var size = MediaQuery.of(context).size;
     return BlocConsumer<ServicesViewModelCubit,ServicesViewModelState>(
       listener: (BuildContext context, state) {  },
       builder: (BuildContext context, Object? state)
@@ -30,8 +29,8 @@ class ServicesView extends StatelessWidget {
                image: AssetImage(
                  "assets/images/leg.png",
                ),
-               width: w * 0.4,
-               height: h * 0.4,
+               width: size.width * 0.4,
+               height: size.height * 0.4,
                color: HexColor("#FFE3C5"),
              ),
            ),
@@ -44,30 +43,30 @@ class ServicesView extends StatelessWidget {
                  image: AssetImage(
                    "assets/images/leg.png",
                  ),
-                 width: w * 0.4,
-                 height: h * 0.4,
+                 width: size.width * 0.4,
+                 height: size.height * 0.4,
                  color: HexColor("#FFE3C5"),
                ),
              ),
            ),
            Positioned(
              left: 0,
-             top: h * .500,
+             top: size.height * .500,
              child: Image(
                image: AssetImage(
                  "assets/images/leg.png",
                ),
                color: HexColor("#FFE3C5"),
-               width: w * 0.4,
-               height: h * 0.4,
+               width: size.width * 0.4,
+               height: size.height * 0.4,
              ),
            ),
            Center(
              child: Padding(
                padding: const EdgeInsets.only(top:60,bottom:60),
                child: Container(
-                 width: w * 0.37,
-                 height: h *1,
+                 width: size.width * 0.37,
+                 height: size.height *1,
                  decoration: BoxDecoration(
                      borderRadius: BorderRadius.circular(40),
                      border: Border.all(
@@ -93,12 +92,18 @@ class ServicesView extends StatelessWidget {
                      Center(
                        child: Container(
                          child: InkWell(
-                           onTap: (){},
-                           child: Image(
-                             image: AssetImage("assets/images/camera.png"),
-                             width: w * .05,
-                             height: w * .05,
-                           ),
+                           onTap: ()
+                           {
+                             // cubit.imagePicker();
+                           },
+                           child:
+                           // cubit.imageAvailable?
+                             
+                           Image(image:AssetImage("assets/images/camera.png"),
+                                 width: size.width * .05,
+                                 height: size.height * .05,)
+                           //           :
+                           // Image.memory(cubit.imageFile),
                          ),
                        ),
                      ),
@@ -107,8 +112,8 @@ class ServicesView extends StatelessWidget {
                        height: 40,
                      ),
                      myDropdown(
-                       height: h * 0.1,
-                       width: w * 0.27,
+                       height: size.height * 0.1,
+                       width: size.width * 0.27,
                        dropItems: cubit.categories,
                        selectedItem: cubit.selectedCategory,
                        hintText: "Category",
@@ -117,7 +122,7 @@ class ServicesView extends StatelessWidget {
                        height: 30,
                      ),
                      Padding(
-                       padding: EdgeInsets.only(right:w*.14),
+                       padding: EdgeInsets.only(right:size.width*.14),
                        child: Text(
                          "Detect your current location",
                          style: TextStyle(fontWeight: FontWeight.bold
@@ -138,8 +143,8 @@ class ServicesView extends StatelessWidget {
                            return 'Location Must not be Empty';
                          }
                        },
-                       height: h * 0.1,
-                       width: w * 0.27,
+                       height: size.height * 0.1,
+                       width: size.width * 0.27,
                        label: "Location",
                        suffix: Icons.location_on_outlined,
                      ),
@@ -154,8 +159,8 @@ class ServicesView extends StatelessWidget {
                            return 'Phone Must not be Empty';
                          }
                        },
-                       height: h * 0.1,
-                       width: w * 0.27,
+                       height: size.height * 0.1,
+                       width: size.width * 0.27,
                        label: "Number Phone",
                        suffix: Icons.phone,),
 
@@ -164,8 +169,8 @@ class ServicesView extends StatelessWidget {
                      ),
                      ButtonCustom(
                        title: "Send",
-                       height: h * 0.06,
-                       width: w * 0.27,
+                       height: size.height * 0.06,
+                       width: size.width * 0.27,
                        onTap: ()
                        {
                          cubit.postServices(
@@ -187,8 +192,8 @@ class ServicesView extends StatelessWidget {
                        color: Color(0xffffe3c5),
                        title: "Call",
                        onTap: () {},
-                       height: h * 0.06,
-                       width: w * 0.27,
+                       height: size.height * 0.06,
+                       width: size.width * 0.27,
                        icon: Icon(Icons.ice_skating),
                      ),
                    ],

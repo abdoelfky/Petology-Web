@@ -143,6 +143,14 @@ class _LoginViewState extends State<LoginView> {
                             ),
                           ),
                         ),
+                        // if(state is LoginErrorState)
+                        //   Padding(
+                        //     padding: EdgeInsets.only(top:size.height*.81,
+                        //       left: size.width*.4,),
+                        //     child: Text('Email or Password is incorrect',
+                        //       style: TextStyle(color: Colors.red,fontSize:25),),
+                        //   ),
+                        //login button
                         Center(
                           child: Padding(
                               padding: EdgeInsets.only(top:size.height*.865),
@@ -150,7 +158,6 @@ class _LoginViewState extends State<LoginView> {
                                   height: size.height*.11,
                                   width: size.width*.4,
                                   onPressed: (){
-                                    print('hhhh');
                                    // if(formKey.currentState!.validate())
                                     {
                                       LoginCubit.get(context).userLogin(
@@ -166,15 +173,20 @@ class _LoginViewState extends State<LoginView> {
                               )
                           ),
                         ),
-                        Center(
-                          child: Padding(
-                              padding: EdgeInsets.only(top:size.height,left: size.width*.28),
-                              child:myDefaultTextButton(text: 'Forget Password?',
-                                  onPressed:(){
-                                print('ahaa');
-                                  })
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
 
-                          ),
+                            Center(
+                              child: Padding(
+                                  padding: EdgeInsets.only(top:size.height,left: size.width*.28),
+                                  child:myDefaultTextButton(text: 'Forget Password?',
+                                      onPressed:(){})
+
+                              ),
+                            ),
+
+                          ],
                         ),
                         Center(
                           child: Padding(

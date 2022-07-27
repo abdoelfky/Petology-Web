@@ -1,5 +1,9 @@
+import 'dart:typed_data';
+
 import 'package:bloc/bloc.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker_web/image_picker_web.dart';
 import 'package:meta/meta.dart';
 import 'package:orange/models/services_model.dart';
 
@@ -46,4 +50,19 @@ class ServicesViewModelCubit extends Cubit<ServicesViewModelState> {
       emit(RequestErrorState(error.toString()));
     });
   }
+
+
+  // bool imageAvailable=false;
+  // late Uint8List imageFile;
+  //
+  // Future<void> imagePicker()async{
+  //
+  //   final image  = await ImagePickerWeb.getImageAsBytes();
+  //   imageFile=image!;
+  //   imageAvailable=true;
+  //
+  //
+  //   emit(HomeViewModelChangeScreenState());
+  //
+  // }
 }
