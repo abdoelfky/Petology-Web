@@ -143,14 +143,14 @@ class _LoginViewState extends State<LoginView> {
                             ),
                           ),
                         ),
-                        // if(state is LoginErrorState)
-                        //   Padding(
-                        //     padding: EdgeInsets.only(top:size.height*.81,
-                        //       left: size.width*.4,),
-                        //     child: Text('Email or Password is incorrect',
-                        //       style: TextStyle(color: Colors.red,fontSize:25),),
-                        //   ),
-                        //login button
+                        if(state is LoginErrorState)
+                          Padding(
+                            padding: EdgeInsets.only(top:size.height*.81,
+                              left: size.width*.4,),
+                            child: Text('Email or Password is incorrect',
+                              style: TextStyle(color: Colors.red,fontSize:25),),
+                          ),
+                        login button
                         Center(
                           child: Padding(
                               padding: EdgeInsets.only(top:size.height*.865),
