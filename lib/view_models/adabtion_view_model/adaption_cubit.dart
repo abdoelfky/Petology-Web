@@ -37,7 +37,11 @@ class AdaptionCubit extends Cubit<AdaptionState> {
   }
 
 
-
+void changeIndex()
+{
+  index=7;
+  emit(SuccessState());
+}
 
 
 

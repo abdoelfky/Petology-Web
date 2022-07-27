@@ -15,7 +15,7 @@ class _ServicesViewState extends State<ServicesAdaptionView> {
   Widget build(BuildContext context) {
     List<AssetImage> items = [
       AssetImage('assets/images/CompositeLayer.png'),
-      AssetImage('assets/images/Dog.png'),
+      AssetImage('assets/images/elsa.png'),
       AssetImage('assets/images/CompositeLayer.png'),
     ];
     CarouselController buttonCarouselController = CarouselController();

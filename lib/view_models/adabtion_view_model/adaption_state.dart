@@ -17,3 +17,4 @@ class FilterGridErrorState extends AdaptionState{
   FilterGridErrorState(this.error);
 }
 
+class SuccessState extends AdaptionState{}

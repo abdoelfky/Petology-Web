@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:orange/reposoteries/constants/constants.dart';
 import 'package:orange/reposoteries/network/remote/dio_helper.dart';
+import 'package:orange/view_models/adabtion_view_model/adaption_cubit.dart';
 import 'package:orange/view_models/home_view_model_cubit/home_view_model.dart';
 import 'package:orange/view_models/login_view_model_cubit/login_cubit.dart';
 import 'package:orange/view_models/register_view_model_cubit/cubit.dart';
@@ -34,6 +35,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context)=>RegisterCubit()..changeScreen(index)),
         BlocProvider(create: (context)=>RequestViewModelCubit()),
         BlocProvider(create: (context)=>ServicesViewModelCubit()),
+        BlocProvider(create: (context)=>AdaptionCubit()),
+
 
 
 

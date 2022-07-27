@@ -7,6 +7,8 @@ import '../../../views/login_view.dart';
 import '../../../views/request_view.dart';
 import '../../../views/services_view.dart';
 import '../../../views/sign_up_view.dart';
+import '../../views/adaption_search_view.dart';
+import '../../views/adaption_serch_detailes_view.dart';
 import 'HomeViewModelState.dart';
 
 class HomeViewModelCubit extends Cubit<HomeViewModelState> {
@@ -23,6 +25,8 @@ class HomeViewModelCubit extends Cubit<HomeViewModelState> {
     RequestView(),
     SignUpView(),
     LoginView(),
+    AdaptionSearchView(),
+    ServicesAdaptionView()
   ];
 
 

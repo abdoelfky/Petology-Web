@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:orange/reposoteries/component/general_component/component.dart';
+import 'package:orange/views/home_view.dart';
 import '../reposoteries/component/drop_down_component/drop_down_component.dart';
 import '../reposoteries/component/grid_view_component/grid_view_item.dart';
 import '../view_models/adabtion_view_model/adaption_cubit.dart';
@@ -275,7 +277,11 @@ class AdaptionSearchView extends StatelessWidget {
                       ),
                       Container(
                         child:TextButton(
-                          onPressed:(){} ,
+                          onPressed:()
+                          {
+                            AdaptionCubit.get(context).changeIndex();
+                            navigateAndEnd(context,HomeView());
+                            } ,
                           child: Text(
                             "Show more.....",
                             style: TextStyle(

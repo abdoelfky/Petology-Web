@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:orange/reposoteries/component/general_component/component.dart';
+import 'package:orange/reposoteries/constants/constants.dart';
+import 'package:orange/views/home_view.dart';
 import '../reposoteries/component/button_custom_component/ButtonCustom.dart';
 import '../reposoteries/component/grid_view_component/grid_view_item.dart';
 import '../reposoteries/component/myDefaultButton_component/myDefaultButton_component.dart';
@@ -317,6 +320,10 @@ class _AboutUSViewState extends State<AboutUSView> {
           myDefaultButton2(
               onPressed: ()
               {
+                setState(() {
+                  index=6;
+                });
+                navigateAndEnd(context, HomeView());
 
               },
               color: HexColor('#492F24'),
@@ -324,7 +331,8 @@ class _AboutUSViewState extends State<AboutUSView> {
               text: 'Show more',
               width: size.width * .24,
               hight: size.height * .1,
-              icon: true),
+              icon: true
+          ),
           SizedBox(height: 50,),
           Container(
             color: HexColor('#F1F1F1'),
