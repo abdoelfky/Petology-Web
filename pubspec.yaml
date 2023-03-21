@@ -41,7 +41,7 @@ dependencies:
   conditional_builder:
   bloc:
   flutter_bloc:
-  dio:
+  dio: ^5.0.3
   shared_preferences:
   path_provider:
   alert_dialog: ^1.0.0
